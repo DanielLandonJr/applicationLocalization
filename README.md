@@ -1,6 +1,6 @@
 # Application Localization
 
-Application that demonstrates  for various languages.
+Application that demonstrates localization for various languages.
 
 ---
 
