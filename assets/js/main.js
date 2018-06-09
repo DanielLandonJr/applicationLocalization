@@ -1,5 +1,5 @@
 import * as UI_Ctrl from './ui.js';
-import * as http from './easyHTTP.js';
+// import * as http from './easyHTTP.js';
 
 const ApplicationLocalization = (() => {
   let frontMatter = '';
