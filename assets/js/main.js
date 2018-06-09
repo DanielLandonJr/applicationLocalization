@@ -6,6 +6,14 @@ const ApplicationLocalization = (() => {
   let translations = '';
   let characters = '';
   let convertedData = '';
+  let config = {
+    apiKey: "AIzaSyAk7uCyrHOzeol2dT_1EOU3wAvO5GWWEPA",
+    authDomain: "languagelocalization.firebaseapp.com",
+    databaseURL: "https://languagelocalization.firebaseio.com",
+    projectId: "languagelocalization",
+    storageBucket: "languagelocalization.appspot.com",
+    messagingSenderId: "832293263814"
+  };
 
   const loadEventListeners = () => {
     document.querySelector('#selectLanguage').addEventListener('change', languageChanged);
@@ -51,16 +59,31 @@ const ApplicationLocalization = (() => {
   // public methods
   return {
     init: () => {
+      // initialize firebase
+      firebase.initializeApp(config);
+
+      // get database, returns promise
+      let dbFireBase = firebase.app().database().ref();
+
+      dbFireBase.once('value')
+      .then((response) => {
+        // convert json to array
+        convertedData = Object.keys(response.val()).map((item) => { return response.val()[item] });
+                  
+        dataLoaded(convertedData);
+      })
+      .catch((error) => { console.log(error) });
+
       loadEventListeners();
 
-      http.easyHTTP.get('./assets/data/localization.json')
-        .then((response) => { 
-          // convert json to array
-          convertedData = Object.keys(response).map((item) => { return response[item] });
+      // http.easyHTTP.get('./assets/data/localization.json')
+      //   .then((response) => { 
+      //     // convert json to array
+      //     convertedData = Object.keys(response).map((item) => { return response[item] });
 
-          dataLoaded(convertedData);
-        })
-        .catch((error) => console.log(error));
+      //     dataLoaded(convertedData);
+      //   })
+      //   .catch((error) => console.log(error));
     }
   }
 })();
