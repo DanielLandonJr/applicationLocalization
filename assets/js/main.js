@@ -7,12 +7,12 @@ const ApplicationLocalization = (() => {
   let characters = '';
   let convertedData = '';
   let config = {
-    apiKey: "AIzaSyAk7uCyrHOzeol2dT_1EOU3wAvO5GWWEPA",
-    authDomain: "languagelocalization.firebaseapp.com",
-    databaseURL: "https://languagelocalization.firebaseio.com",
-    projectId: "languagelocalization",
-    storageBucket: "languagelocalization.appspot.com",
-    messagingSenderId: "832293263814"
+    apiKey: "AIzaSyDz-NWkcHxTq6wDoaCop60IO9HdJ1MUmu4",
+    authDomain: "localization-languages.firebaseapp.com",
+    databaseURL: "https://localization-languages.firebaseio.com",
+    projectId: "localization-languages",
+    storageBucket: "localization-languages.appspot.com",
+    messagingSenderId: "2110629738"
   };
 
   const loadEventListeners = () => {
