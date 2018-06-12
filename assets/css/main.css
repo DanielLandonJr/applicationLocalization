@@ -1,0 +1,64 @@
+/* varialbes */
+:root {
+  --primaryHEX: #800080;
+  --primaryRGBA: rgba(128, 0, 128, 1);
+  --secondaryHEX: #008040;
+  --secondaryRGBA:rgba(0, 128, 64, 1);
+  --tertiaryHEX: #408000;
+  --tertiaryRGBA: rgba(64, 128, 0, 1);
+  --shadow: 0 1px 5px rgba(128, 128, 64, 0.8);
+}
+
+/* loading spinner */
+.loadSpinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  border-radius: 50%;
+  border-top: 2px solid var(--primaryHEX);
+  border-right: 2px solid transparent;
+  animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* end spinner */
+
+.hide {
+  display: none;
+}
+
+#content {
+  display: grid;
+  text-align: center;
+  grid-template-rows: 1fr;
+}
+
+#languages {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+@media (max-width: 568px) {
+  #languages {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+/* @media (min-width: 568px) {
+  #languages {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */

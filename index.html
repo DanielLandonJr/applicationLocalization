@@ -7,126 +7,126 @@
   <title>Language Localization</title>
   
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
+
+  <link rel="stylesheet" href="./assets/css/normalize.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
 
-  <div class="container z-depth-1">
-    <div id="mainContent">  
-      <div id="loadData" class="row center">
-        <h3>Loading ...</h3>
-        <div class="progress">
-            <div class="indeterminate"></div>
-        </div>
-      </div>
+  <div id="content">
+    <!-- <div id="loadData" class="row center"> -->
+    <section id="loadData">
+      <h1>Loading</h1>
+      <span class="loadSpinner"></span>
+    </section>
 
-      <div id="chooseLanguage" class="hide">
-        <div class="row center">
-          <div class="col s4 offset-s4">
-            <label for="selectLanguage">Translation by Google</label>
-            <select id="selectLanguage" class="browser-default">
-              <option value="" selected disabled>Choose Language</option>
-              <option value="English">English</option>
-              <option value="Chinese">Chinese (Simplified)</option>
-              <option value="Japanese">Japanese</option>
-              <option value="Latin">Latin</option>
-              <option value="Russian">Russian</option>
-              <option value="Gaelic">Scots Gaelic</option>
-            </select>
-          </div>
-        </div>
-        <div class="row center">
-          <div id="default" class="col s12">
-            <h5>"<span class="title">title</span>"</h5>
-            <p>by <span class="author">author</span> in <span class="language">default</span></p>
-            <p>
-              <span class='local1'>default 1</span><br>
-              <span class='local2'>default 2</span><br>
-              <span class='local3'>default 3</span><br>
-              <span class='local4'>default 4</span>
-            </p>
-            <p>
-              <span class='local5'>default 5</span><br>
-              <span class='local6'>default 6</span><br>
-              <span class='local7'>default 7</span><br>
-              <span class='local8'>default 8</span><br>
-              <span class='local9'>default 9</span>
-            </p>
-            <p>
-              <span class='local10'>default 10</span><br>
-              <span class='local11'>default 11</span><br>
-              <span class='local12'>default 12</span><br>
-              <span class='local13'>default 13</span><br>
-              <span class='local14'>default 14</span><br>
-              <span class='local15'>default 15</span><br>
-              <span class='local16'>default 16</span><br>
-              <span class='local17'>default 17</span><br>
-              <span class='local18'>default 18</span>
-            </p>
-          </div>
-          <div id="translations" class="col s12">
-            <h5>"<span class="title">title</span>"</h5>
-            <p>by <span class="author">author</span> in <span class="language">default</span></p>
-            <p>
-              <span class='local1'>translation 1</span><br>
-              <span class='local2'>translation 2</span><br>
-              <span class='local3'>translation 3</span><br>
-              <span class='local4'>translation 4</span>
-            </p>
-            <p>
-              <span class='local5'>translation 5</span><br>
-              <span class='local6'>translation 6</span><br>
-              <span class='local7'>translation 7</span><br>
-              <span class='local8'>translation 8</span><br>
-              <span class='local9'>translation 9</span>
-            </p>
-            <p>
-              <span class='local10'>translation 10</span><br>
-              <span class='local11'>translation 11</span><br>
-              <span class='local12'>translation 12</span><br>
-              <span class='local13'>translation 13</span><br>
-              <span class='local14'>translation 14</span><br>
-              <span class='local15'>translation 15</span><br>
-              <span class='local16'>translation 16</span><br>
-              <span class='local17'>translation 17</span><br>
-              <span class='local18'>translation 18</span>
-            </p>
-          </div>
-          <div id="characters" class="col s12">
-            <h5>"<span class="title">title</span>"</h5>
-            <p>by <span class="author">author</span> in <span class="language">default</span></p>
-            <p>
-              <span class='local1'>characters 1</span><br>
-              <span class='local2'>characters 2</span><br>
-              <span class='local3'>characters 3</span><br>
-              <span class='local4'>characters 4</span>
-            </p>
-            <p>
-              <span class='local5'>characters 5</span><br>
-              <span class='local6'>characters 6</span><br>
-              <span class='local7'>characters 7</span><br>
-              <span class='local8'>characters 8</span><br>
-              <span class='local9'>characters 9</span>
-            </p>
-            <p>
-              <span class='local10'>characters 10</span><br>
-              <span class='local11'>characters 11</span><br>
-              <span class='local12'>characters 12</span><br>
-              <span class='local13'>characters 13</span><br>
-              <span class='local14'>characters 14</span><br>
-              <span class='local15'>characters 15</span><br>
-              <span class='local16'>characters 16</span><br>
-              <span class='local17'>characters 17</span><br>
-              <span class='local18'>characters 18</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section id="chooseLanguage" class="hide">
+      <label for="selectLanguage">Translation by Google</label>
+      <select id="selectLanguage">
+        <option value="" selected disabled>Choose Language</option>
+        <option value="English">English</option>
+        <option value="Chinese">Chinese (Simplified)</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Latin">Latin</option>
+        <option value="Russian">Russian</option>
+        <option value="Gaelic">Scots Gaelic</option>
+      </select>
+    </section>
+    
+
+    <section id="languages" class="hide">
+      <section id="default" class="hide">
+        <h5>"<span class="title">title</span>"</h5>
+        <p>by <span class="author">author</span> in <span class="language">default</span></p>
+        <p>
+          <span class='local1'>default 1</span><br>
+          <span class='local2'>default 2</span><br>
+          <span class='local3'>default 3</span><br>
+          <span class='local4'>default 4</span>
+        </p>
+        <p>
+          <span class='local5'>default 5</span><br>
+          <span class='local6'>default 6</span><br>
+          <span class='local7'>default 7</span><br>
+          <span class='local8'>default 8</span><br>
+          <span class='local9'>default 9</span>
+        </p>
+        <p>
+          <span class='local10'>default 10</span><br>
+          <span class='local11'>default 11</span><br>
+          <span class='local12'>default 12</span><br>
+          <span class='local13'>default 13</span><br>
+          <span class='local14'>default 14</span><br>
+          <span class='local15'>default 15</span><br>
+          <span class='local16'>default 16</span><br>
+          <span class='local17'>default 17</span><br>
+          <span class='local18'>default 18</span>
+        </p>
+      </section>
+      
+      <section id="translations" class="hide">
+        <h5>"<span class="title">title</span>"</h5>
+        <p>by <span class="author">author</span> in <span class="language">default</span></p>
+        <p>
+          <span class='local1'>translation 1</span><br>
+          <span class='local2'>translation 2</span><br>
+          <span class='local3'>translation 3</span><br>
+          <span class='local4'>translation 4</span>
+        </p>
+        <p>
+          <span class='local5'>translation 5</span><br>
+          <span class='local6'>translation 6</span><br>
+          <span class='local7'>translation 7</span><br>
+          <span class='local8'>translation 8</span><br>
+          <span class='local9'>translation 9</span>
+        </p>
+        <p>
+          <span class='local10'>translation 10</span><br>
+          <span class='local11'>translation 11</span><br>
+          <span class='local12'>translation 12</span><br>
+          <span class='local13'>translation 13</span><br>
+          <span class='local14'>translation 14</span><br>
+          <span class='local15'>translation 15</span><br>
+          <span class='local16'>translation 16</span><br>
+          <span class='local17'>translation 17</span><br>
+          <span class='local18'>translation 18</span>
+        </p>
+      </section>
+      
+      <section id="characters" class="hide">
+        <h5>"<span class="title">title</span>"</h5>
+        <p>by <span class="author">author</span> in <span class="language">default</span></p>
+        <p>
+          <span class='local1'>characters 1</span><br>
+          <span class='local2'>characters 2</span><br>
+          <span class='local3'>characters 3</span><br>
+          <span class='local4'>characters 4</span>
+        </p>
+        <p>
+          <span class='local5'>characters 5</span><br>
+          <span class='local6'>characters 6</span><br>
+          <span class='local7'>characters 7</span><br>
+          <span class='local8'>characters 8</span><br>
+          <span class='local9'>characters 9</span>
+        </p>
+        <p>
+          <span class='local10'>characters 10</span><br>
+          <span class='local11'>characters 11</span><br>
+          <span class='local12'>characters 12</span><br>
+          <span class='local13'>characters 13</span><br>
+          <span class='local14'>characters 14</span><br>
+          <span class='local15'>characters 15</span><br>
+          <span class='local16'>characters 16</span><br>
+          <span class='local17'>characters 17</span><br>
+          <span class='local18'>characters 18</span>
+        </p>
+      </section>
+    </section>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
   <script src="./assets/js/main.js" type='module'></script>
 </body>
 </html>

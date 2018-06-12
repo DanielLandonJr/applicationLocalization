@@ -50,10 +50,10 @@ const ApplicationLocalization = (() => {
       .map((item) => item.translations);
     characters = data.filter((item) => item.frontMatter.language === 'English')
     .map((item) => item.characters);
-    
-    UI_Ctrl.UI.paintUI(frontMatter, translations, 'default');
 
     UI_Ctrl.UI.loadUI();
+    
+    UI_Ctrl.UI.paintUI(frontMatter, translations, 'default');
   }
   
   // public methods
@@ -69,6 +69,8 @@ const ApplicationLocalization = (() => {
       .then((response) => {
         // convert json to array
         convertedData = Object.keys(response.val()).map((item) => { return response.val()[item] });
+
+        console.log(convertedData);
                   
         dataLoaded(convertedData);
       })
