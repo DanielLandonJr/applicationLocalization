@@ -1,39 +1,39 @@
 export const UI = (() => {
+  let languages = document.querySelector('#languages')
+  let defaultLanguage = document.querySelector('#default');
+  let translations = document.querySelector('#translations');
+  let characters = document.querySelector('#characters');
+
+  let loadData = document.querySelector('#loadData');
+  let chooseLanguage = document.querySelector('#chooseLanguage');
+
   // public methods
   return {
     loadUI: () => {
-      // hide the loader
-      document.querySelector('#loadData').classList.add('hide');
-      // show the language
-      document.querySelector('#chooseLanguage').classList.remove('hide');
+      loadData.classList.add('hide');
+      chooseLanguage.classList.remove('hide');
+      languages.classList.remove('hide');
     },
     paintUI: (frontMatter, data, set) => {
+      // hide all langauges
+      defaultLanguage.classList.add('hide');
+      translations.classList.add('hide');
+      characters.classList.add('hide');
+
       switch(set) {
         case 'default':
           // center default in screen and hide translation and characters
-          // show those two again when a language is selected
-          document.querySelector('#default').classList.remove('m4');
-          document.querySelector('#default').classList.remove('m6');
-          document.querySelector('#translations').style.display = 'none';
-          document.querySelector('#characters').style.display = 'none';
+          defaultLanguage.classList.remove('hide');
           break;
         case 'translations':
-          // put default and translation side by side
-          document.querySelector('#default').classList.add('m6');
-          document.querySelector('#translations').classList.add('m6');
-          // show translations
-          document.querySelector('#translations').style.display = 'block';
-          document.querySelector('#characters').style.display = 'none';
+          defaultLanguage.classList.remove('hide');
+          translations.classList.remove('hide');
           break;
         case 'characters':
           // put default and translation side by side
-          document.querySelector('#default').classList.remove('m6');
-          document.querySelector('#translations').classList.remove('m6');
-          document.querySelector('#default').classList.add('m4');
-          document.querySelector('#translations').classList.add('m4');
-          document.querySelector('#characters').classList.add('m4');
-          // show translations
-          document.querySelector('#characters').style.display = 'block';
+          defaultLanguage.classList.remove('hide');
+          translations.classList.remove('hide');
+          characters.classList.remove('hide');
           break;
       }
 
