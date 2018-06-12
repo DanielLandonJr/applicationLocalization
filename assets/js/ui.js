@@ -23,18 +23,14 @@ export const UI = (() => {
       switch(set) {
         case 'default':
           // center default in screen and hide translation and characters
-          languages.setAttribute('style','grid-template-columns: 1fr;');
           defaultLanguage.classList.remove('hide');
           break;
         case 'translations':
-          // put default and translation side by side
-          languages.setAttribute('style','grid-template-columns: 1fr 1fr;');
           defaultLanguage.classList.remove('hide');
           translations.classList.remove('hide');
           break;
         case 'characters':
           // put default and translation side by side
-          languages.setAttribute('style','grid-template-columns: 1fr 1fr 1fr;');
           defaultLanguage.classList.remove('hide');
           translations.classList.remove('hide');
           characters.classList.remove('hide');

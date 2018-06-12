@@ -6,7 +6,7 @@
   --secondaryRGBA:rgba(0, 128, 64, 1);
   --tertiaryHEX: #408000;
   --tertiaryRGBA: rgba(64, 128, 0, 1);
-  --shadow: 0 1px 5px rgba(128, 128, 64, 0.8);
+  --shadow: 2px 2px 4px 2px var(--secondaryRGBA);
 }
 
 /* loading spinner */
@@ -41,24 +41,33 @@
   display: grid;
   text-align: center;
   grid-template-rows: 1fr;
+  grid-gap: 1rem;
 }
 
 #languages {
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-gap: 1rem;
 }
 
-@media (max-width: 568px) {
+#default, #translations, #characters {
+  box-shadow: var(--shadow);
+}
+
+p[class*='firstLetter']::first-letter {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 579px) {
   #languages {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* screen smaller than 580px, one column wide */
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 }
 
-/* @media (min-width: 568px) {
+@media (min-width: 580px) {
   #languages {
-    grid-template-columns: 1fr 1fr 1fr;
+    /* screen size larger than 580px, 3 columns side by side */
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   }
-} */
+}

@@ -1,5 +1,4 @@
 import * as UI_Ctrl from './ui.js';
-// import * as http from './easyHTTP.js';
 
 const ApplicationLocalization = (() => {
   let frontMatter = '';
@@ -7,12 +6,12 @@ const ApplicationLocalization = (() => {
   let characters = '';
   let convertedData = '';
   let config = {
-    apiKey: "AIzaSyAk7uCyrHOzeol2dT_1EOU3wAvO5GWWEPA",
-    authDomain: "languagelocalization.firebaseapp.com",
-    databaseURL: "https://languagelocalization.firebaseio.com",
-    projectId: "languagelocalization",
-    storageBucket: "languagelocalization.appspot.com",
-    messagingSenderId: "832293263814"
+    apiKey: "AIzaSyDz-NWkcHxTq6wDoaCop60IO9HdJ1MUmu4",
+    authDomain: "localization-languages.firebaseapp.com",
+    databaseURL: "https://localization-languages.firebaseio.com",
+    projectId: "localization-languages",
+    storageBucket: "localization-languages.appspot.com",
+    messagingSenderId: "2110629738"
   };
 
   const loadEventListeners = () => {
@@ -69,23 +68,12 @@ const ApplicationLocalization = (() => {
       .then((response) => {
         // convert json to array
         convertedData = Object.keys(response.val()).map((item) => { return response.val()[item] });
-
-        console.log(convertedData);
                   
         dataLoaded(convertedData);
       })
       .catch((error) => { console.log(error) });
 
       loadEventListeners();
-
-      // http.easyHTTP.get('./assets/data/localization.json')
-      //   .then((response) => { 
-      //     // convert json to array
-      //     convertedData = Object.keys(response).map((item) => { return response[item] });
-
-      //     dataLoaded(convertedData);
-      //   })
-      //   .catch((error) => console.log(error));
     }
   }
 })();
