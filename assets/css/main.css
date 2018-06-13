@@ -48,6 +48,8 @@
   text-align: center;
   display: grid;
   grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
 #default, #translations, #characters {
@@ -58,16 +60,9 @@ p[class*='firstLetter']::first-letter {
   font-size: 1.5rem;
 }
 
-@media (max-width: 579px) {
-  #languages {
-    /* screen smaller than 580px, one column wide */
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  }
-}
-
 @media (min-width: 580px) {
   #languages {
     /* screen size larger than 580px, 3 columns side by side */
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
   }
 }
